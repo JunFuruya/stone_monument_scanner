@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ancient_documents.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: '古文書スキャン 【α版】'),
     );
   }
 }
@@ -41,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      drawer: getHamburgerMenu(),
+      drawer: getHamburgerMenu(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,14 +62,14 @@ class _MyHomePageState extends State<MyHomePage> {
   /*
    * ハンバーガーメニュー
    **/
-  Drawer getHamburgerMenu() {
+  Drawer getHamburgerMenu(BuildContext context) {
     return Drawer(
       child: ListView(
         children: [
           getHamburgerMenuHeader(),
           getHamburgerMenuDivider(),
           ...menuList.map(
-                (e) => addMenuItem(e),
+            (e) => addMenuItem(e, context),
           )
         ],
       ),
@@ -91,17 +93,19 @@ class _MyHomePageState extends State<MyHomePage> {
   /*
    * ハンバーガーメニューに項目を追加する
    **/
-  Column addMenuItem(String title) {
+  Column addMenuItem(String title, BuildContext context) {
     return Column(
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 28.0,
-          ),
+        ElevatedButton(
+          child: Text(title),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AncientDocuments()),
+            );
+          },
         ),
-      ],
+      ]
     );
   }
 }
