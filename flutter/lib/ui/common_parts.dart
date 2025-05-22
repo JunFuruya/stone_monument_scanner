@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CommonParts {
-  /// ボタン生成
-  //TextButton getTextButton(action, styles, text) {
-  //  return TextButton(
-  //    onPressed: (objClass) {
-  //      objClass.execute();
-  //    }, // ボタンを押したときの挙動
-  //    style: TextButton.styleFrom(styles), // ボタンのデザイン
-  //    child: Text(text), // ボタンのラベル
-  //  )
-  //}
-
+  /// ハンバーガーメニュー項目リスト
   static List<String> menuList = ['古文書スキャン', 'プライバシーポリシー'];
+
+  /// ヘッダー
+  ///
+  static getAppBar(BuildContext context, String title) {
+    return AppBar(
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      title: Text(title),
+    );
+  }
 
   /// ハンバーガーメニュー
   static Drawer getHamburgerMenu(BuildContext context) {
@@ -22,7 +21,7 @@ class CommonParts {
           _getHamburgerMenuHeader(),
           _getHamburgerMenuDivider(),
           ...menuList.map(
-            (item) => _addMenuItem(item, context),
+            (item) => _addMenuItem(context, item),
           )
         ],
       ),
@@ -40,17 +39,29 @@ class CommonParts {
   }
 
   /// ハンバーガーメニューに項目を追加する
-  static Column _addMenuItem(String title, BuildContext context) {
+  static Column _addMenuItem(BuildContext context, String title, String uri) {
     return Column(
         children: [
           ElevatedButton(
             child: Text(title),
             onPressed: () {
-              // FIXME 引数はダミー値
-              Navigator.of(context).pushNamed('/ancient_documents', arguments: 'Hello');
+              Navigator.of(context).pushNamed('/ancient_documents');
             },
           ),
         ]
+    );
+  }
+
+  /// 画面移動ボタン生成
+  static ElevatedButton getElevatedButton(BuildContext context, styles, text, String uri, arguments) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).pushNamed(uri, arguments: arguments);
+      }, // ボタンを押したときの挙動
+      style: ElevatedButton.styleFrom(
+        backgroundColor: styles,
+      ), // ボタンのデザイン
+      child: Text(text), // ボタンのラベル
     );
   }
 }

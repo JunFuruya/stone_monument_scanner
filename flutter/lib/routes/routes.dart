@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../main.dart';
-import '../pages/ancient_documents/top.dart';
+import '../pages/ancient_documents.dart';
 
 /// 画面遷移管理クラス
 ///
@@ -23,11 +23,9 @@ class Routes {
       ],
       initialRoute: '/',
       routes: <String, WidgetBuilder> {
-        // FIXME 画面タイトル
-        '/': (BuildContext context) => MyHomePage(title: AppLocalizations.of(context)!.app_title,),
-        '/ancient_documents': (BuildContext context) => AncientDocumentsTop(title: 'page A')
-        //'/ancient_documents/photo/camera': (BuildContext context) => MyPage(title: 'page B'),
-        //'/ancient_documents/photo/': (BuildContext context) => MyPage(title: 'page B'),
+        '/': (BuildContext context) => MyHomePage(title: AppLocalizations.of(context)!.app_top),
+        '/ancient_documents': (BuildContext context) => AncientDocumentsTop(title: AppLocalizations.of(context)!.ancient_documents_top),
+        '/ancient_documents/camera': (BuildContext context) => AncientDocumentsCamera(title: ''),
       },
     );
   }

@@ -1,4 +1,8 @@
 {
   "@@locale":"en",
-  "app_title": "Stone Monument Scanner (alpha version)"
+  "app_title": "Stone Monument Scanner (alpha version)",
+  "app_top": "Home",
+  "ancient_documents_top": "Ancient Docs Scan",
+  "camera": "",
+  "button_camera_invoke": "Take Photos"
 }

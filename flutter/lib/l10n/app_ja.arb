@@ -1,4 +1,8 @@
 {
   "@@locale": "ja",
-  "app_title": "石碑スキャナー （αバージョン）"
+  "app_title": "古文書スキャナー （αバージョン）",
+  "app_top": "ホーム",
+  "ancient_documents_top": "古文書スキャン",
+  "camera": "",
+  "button_camera_invoke": "カメラ起動"
 }
