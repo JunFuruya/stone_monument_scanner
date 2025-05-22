@@ -1,30 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'pages/ancient_documents/top.dart';
 import 'routes/routes.dart';
 import 'ui/common_parts.dart';
 
-void main() {
+Future main() async {
+  await dotenv.load(fileName: '.env');
+  dotenv.get('API_DOMAIN');
+  print('API_DOMAIN: ${dotenv.env['API_DOMAIN']}');
   runApp(
     Routes.getRoutes()
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '古文書スキャン 【α版】',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: '古文書スキャン 【α版】'),
-    );
-  }
-}
-
+/// ホーム画面
+///
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -34,12 +24,12 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-/**
- * _MyHomePageState
- */
+/// _MyHomePageState
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -50,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text('TEST'),
             Text(
               '',
               style: Theme.of(context).textTheme.headlineMedium,
