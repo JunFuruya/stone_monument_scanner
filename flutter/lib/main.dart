@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'pages/ancient_documents/top.dart';
 import 'routes/routes.dart';
+import 'ui/common_parts.dart';
 
 void main() {
   runApp(
@@ -38,8 +39,6 @@ class MyHomePage extends StatefulWidget {
  * _MyHomePageState
  */
 class _MyHomePageState extends State<MyHomePage> {
-  final menuList = ['古文書スキャン', 'プライバシーポリシー'];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      drawer: getHamburgerMenu(context),
+      drawer: CommonParts.getHamburgerMenu(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,54 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-    );
-  }
-
-  /*
-   * ハンバーガーメニュー
-   **/
-  Drawer getHamburgerMenu(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
-          getHamburgerMenuHeader(),
-          getHamburgerMenuDivider(),
-          ...menuList.map(
-            (e) => addMenuItem(e, context),
-          )
-        ],
-      ),
-    );
-  }
-
-  /*
-   * ハンバーガーメニューヘッダ
-   **/
-  DrawerHeader getHamburgerMenuHeader() {
-    return const DrawerHeader(child: null,);
-  }
-
-  /*
-   * ハンバーガーメニュー区切り線
-   **/
-  Divider getHamburgerMenuDivider() {
-    return const Divider();
-  }
-
-  /*
-   * ハンバーガーメニューに項目を追加する
-   **/
-  Column addMenuItem(String title, BuildContext context) {
-    return Column(
-      children: [
-        ElevatedButton(
-          child: Text(title),
-          onPressed: () {
-            // FIXME 引数はダミー値
-            Navigator.of(context).pushNamed('/ancient_documents', arguments: 'Hello');
-          },
-        ),
-      ]
     );
   }
 }
