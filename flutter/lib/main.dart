@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'ancient_documents.dart';
+import 'pages/ancient_documents/top.dart';
+import 'routes/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    Routes.getRoutes()
+    //const MyApp()
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -99,10 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ElevatedButton(
           child: Text(title),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AncientDocuments()),
-            );
+            // FIXME 引数はダミー値
+            Navigator.of(context).pushNamed('/ancient_documents', arguments: 'Hello');
           },
         ),
       ]
