@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class AncientDocuments extends StatelessWidget {
-  const AncientDocuments({super.key});
+class AncientDocumentsTop extends StatelessWidget {
+  //コンストラクタ
+  const AncientDocumentsTop({super.key, required title});
 
   @override
   Widget build(BuildContext context) {
