@@ -7,7 +7,6 @@ import 'ui/common_parts.dart';
 void main() {
   runApp(
     Routes.getRoutes()
-    //const MyApp()
   );
 }
 
