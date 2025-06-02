@@ -8,7 +8,8 @@ plugins {
 android {
     namespace = "xyz.jfuruya.stone_monument_scanner"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    //ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.2.12479018"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -24,7 +25,9 @@ android {
         applicationId = "xyz.jfuruya.stone_monument_scanner"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        //minSdk = flutter.minSdkVersion
+        //カメラ使用のため
+        minSdk = 27
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

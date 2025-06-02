@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import '../l10n/app_localizations.dart';
 import '../ui/common_parts.dart';
 
-/// 古文書スキャンTOP
+/// 2-1. 古文書スキャンTOP
 class AncientDocumentsTop extends StatelessWidget {
   //コンストラクタ
   const AncientDocumentsTop({super.key, required title});
@@ -25,7 +24,7 @@ class AncientDocumentsTop extends StatelessWidget {
   }
 }
 
-/// カメラ起動
+/// 2-2. カメラ起動
 class AncientDocumentsCamera extends StatelessWidget {
   //コンストラクタ
   const AncientDocumentsCamera({super.key, required title});

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class CommonParts {
   /// ハンバーガーメニュー項目リスト
-  static List<String> menuList = ['古文書スキャン', 'プライバシーポリシー'];
+  static List<Map<String, String>> menuList = [
+    {'title': '古文書スキャン', 'uri' : '/ancient_documents'},
+    {'title': 'プライバシーポリシー', 'uri' : '/privacy_policy'}
+  ];
 
   /// ヘッダー
   ///
@@ -17,13 +20,11 @@ class CommonParts {
   static Drawer getHamburgerMenu(BuildContext context) {
     return Drawer(
       child: ListView(
-        children: [
-          _getHamburgerMenuHeader(),
-          _getHamburgerMenuDivider(),
-          ...menuList.map(
-            (item) => _addMenuItem(context, item),
-          )
-        ],
+        //children: [
+          //_getHamburgerMenuHeader(),
+          //_getHamburgerMenuDivider(),
+          //...menuList.map((item) => _addMenuItem(context, item)),
+        //],
       ),
     );
   }
@@ -39,18 +40,20 @@ class CommonParts {
   }
 
   /// ハンバーガーメニューに項目を追加する
-  static Column _addMenuItem(BuildContext context, String title, String uri) {
+  /*
+  static Column _addMenuItem(BuildContext context, Map<String, String> map) {
     return Column(
         children: [
           ElevatedButton(
-            child: Text(title),
+            child: Text(map['title']!),
             onPressed: () {
-              Navigator.of(context).pushNamed('/ancient_documents');
+              Navigator.of(context).pushNamed(map['uri']!);
             },
           ),
         ]
     );
   }
+  */
 
   /// 画面移動ボタン生成
   static ElevatedButton getElevatedButton(BuildContext context, styles, text, String uri, arguments) {
