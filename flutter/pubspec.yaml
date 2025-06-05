@@ -42,6 +42,7 @@ dependencies:
 
   # カメラ
   camera: ^0.11.1
+  image_picker: ^1.1.2
 
   # ファイル関連
   path_provider: ^2.0.9

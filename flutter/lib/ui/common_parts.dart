@@ -47,7 +47,6 @@ class CommonParts {
             child: Text(map['title']!),
             onPressed: () {
               Navigator.of(context).pushNamed(map['uri']!);
-              //Navigator.of(context).pushNamed('/ancient_documents', );
             },
           ),
         ]

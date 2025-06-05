@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
+import '../states/ancient_documents.dart';
 import '../ui/common_parts.dart';
 
 /// 2-1. 古文書スキャンTOP
@@ -28,18 +29,12 @@ class AncientDocumentsTop extends StatelessWidget {
 
 /// 2-2. カメラ起動
 ///
-class AncientDocumentsCamera extends StatelessWidget {
-  // コンストラクタ
-  const AncientDocumentsCamera({super.key, required title});
+class AncientDocumentsCamera extends StatefulWidget {
+  final String title;
 
-  // 画面構築
+  // コンストラクタ
+  const AncientDocumentsCamera({super.key, required this.title});
+
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: CommonParts.getAppBar (context, "古文書スキャン"),
-        body: Container(
-          color: Colors.red,
-        )
-    );
-  }
+  State<AncientDocumentsCamera> createState() => AncientDocumentsCameraState();
 }
