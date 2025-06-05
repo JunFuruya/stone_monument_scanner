@@ -40,6 +40,20 @@ dependencies:
     sdk: flutter
   flutter_dotenv: ^5.2.1
 
+  # カメラ
+  camera: ^0.11.1
+
+  # ファイル関連
+  path_provider: ^2.0.9
+  path: ^1.8.0
+  camera_android: ^0.10.10+3
+
+  # buildの後処理
+  after_layout: ^1.0.7+2
+
+  # スプラッシュ
+  flutter_native_splash: ^2.1.3+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,6 +83,7 @@ flutter:
   # 環境変数ファイル追加
   assets:
     - .env
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -98,3 +113,11 @@ flutter:
 
   # 自動生成フラグの有効化
   generate: true
+
+# スプラッシュ
+flutter_native_splash:
+  color: '#add8e6'
+  image: 'assets/images/logo.png'
+  color_dark: '#262626'
+  image_dark: 'assets/images/logo.png'
+  fullscreen: true

@@ -1,34 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-
-import '../main.dart';
-import '../pages/ancient_documents/top.dart';
+import '../l10n/app_localizations.dart';
+import '../pages/startup.dart';
+import '../pages/ancient_documents.dart';
 
 /// 画面遷移管理クラス
 ///
 class Routes {
   /// ルーティング情報オブジェクトを取得する
-  static MaterialApp getRoutes() {
-    return MaterialApp(
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('ja', ''),
-        const Locale('en', ''),
-      ],
-      initialRoute: '/',
-      routes: <String, WidgetBuilder> {
-        // FIXME 画面タイトル
-        '/': (BuildContext context) => MyHomePage(title: AppLocalizations.of(context)!.app_title,),
-        '/ancient_documents': (BuildContext context) => AncientDocumentsTop(title: 'page A')
-        //'/ancient_documents/photo/camera': (BuildContext context) => MyPage(title: 'page B'),
-        //'/ancient_documents/photo/': (BuildContext context) => MyPage(title: 'page B'),
-      },
-    );
+  static Map<String, WidgetBuilder> getRoutes() {
+    return {
+      '/logo': (BuildContext context) => Home(title: AppLocalizations.of(context)!.startup_home),
+      '/splash': (BuildContext context) => Splash(title: AppLocalizations.of(context)!.startup_splash),
+      '/ancient_documents': (BuildContext context) => AncientDocumentsTop(title: AppLocalizations.of(context)!.ancient_documents_top),
+      '/ancient_documents/camera': (BuildContext context) => AncientDocumentsCamera(title: AppLocalizations.of(context)!.ancient_documents_camera),
+      // FIXME プライバシーポリシー画面
+      //'/privacy_policy': (BuildContext context) => AncientDocumentsCamera(title: ''),
+    };
+  }
+
+  //
+  static moveHome(context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Splash(title: '',)));
   }
 }

@@ -1,53 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'pages/startup.dart';
+import '../l10n/app_localizations.dart';
+import '../routes/routes.dart';
 
-import 'routes/routes.dart';
-import 'ui/common_parts.dart';
-
-Future main() async {
-  await dotenv.load(fileName: '.env');
-  dotenv.get('API_DOMAIN');
-  print('API_DOMAIN: ${dotenv.env['API_DOMAIN']}');
-  runApp(
-    Routes.getRoutes()
-  );
+// メイン処理
+void main() {
+  // FIXME envファイルから取得する
+  runApp(Logo(title: 'test'));
 }
 
-/// ホーム画面
-///
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-/// _MyHomePageState
-class _MyHomePageState extends State<MyHomePage> {
+// アプリケーション
+class Application extends StatelessWidget {
+  const Application({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      drawer: CommonParts.getHamburgerMenu(context),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('TEST'),
-            Text(
-              '',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
+    return MaterialApp(
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('ja', ''),
+        const Locale('en', ''),
+      ],
+      initialRoute: '/',
+      home: Logo(title: ''),
+      routes: Routes.getRoutes(),
     );
   }
 }
