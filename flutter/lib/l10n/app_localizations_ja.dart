@@ -12,13 +12,19 @@ class AppLocalizationsJa extends AppLocalizations {
   String get app_title => '古文書スキャナー （αバージョン）';
 
   @override
-  String get app_top => 'ホーム';
+  String get startup_logo => 'スプラッシュ';
+
+  @override
+  String get startup_splash => 'スプラッシュ';
+
+  @override
+  String get startup_home => 'ホーム';
 
   @override
   String get ancient_documents_top => '古文書スキャン';
 
   @override
-  String get camera => '';
+  String get ancient_documents_camera => '';
 
   @override
   String get button_camera_invoke => 'カメラ起動';

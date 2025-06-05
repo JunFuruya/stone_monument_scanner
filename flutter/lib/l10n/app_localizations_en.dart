@@ -12,13 +12,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get app_title => 'Stone Monument Scanner (alpha version)';
 
   @override
-  String get app_top => 'Home';
+  String get startup_logo => 'スプラッシュ';
+
+  @override
+  String get startup_splash => 'スプラッシュ';
+
+  @override
+  String get startup_home => 'ホーム';
 
   @override
   String get ancient_documents_top => 'Ancient Docs Scan';
 
   @override
-  String get camera => '';
+  String get ancient_documents_camera => '';
 
   @override
   String get button_camera_invoke => 'Take Photos';

@@ -4,20 +4,21 @@ import '../ui/common_parts.dart';
 
 /// 2-1. 古文書スキャンTOP
 class AncientDocumentsTop extends StatelessWidget {
-  //コンストラクタ
+  // コンストラクタ
   const AncientDocumentsTop({super.key, required title});
 
+  // 画面構築
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonParts.getAppBar (context, "古文書スキャン"),
       body: Container(
         child: CommonParts.getElevatedButton(
-            context,
-            Colors.red,
-            AppLocalizations.of(context)!.button_camera_invoke,
-            '/ancient_documents/camera',
-            ''
+          context,
+          Colors.red,
+          AppLocalizations.of(context)!.button_camera_invoke,
+          '/ancient_documents/camera',
+          ''
         ),
       )
     );
@@ -26,9 +27,10 @@ class AncientDocumentsTop extends StatelessWidget {
 
 /// 2-2. カメラ起動
 class AncientDocumentsCamera extends StatelessWidget {
-  //コンストラクタ
+  // コンストラクタ
   const AncientDocumentsCamera({super.key, required title});
 
+  // 画面構築
   @override
   Widget build(BuildContext context) {
     return Scaffold(

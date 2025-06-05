@@ -1,8 +1,10 @@
 {
   "@@locale": "ja",
   "app_title": "古文書スキャナー （αバージョン）",
-  "app_top": "ホーム",
+  "startup_logo": "スプラッシュ",
+  "startup_splash": "スプラッシュ",
+  "startup_home": "ホーム",
   "ancient_documents_top": "古文書スキャン",
-  "camera": "",
+  "ancient_documents_camera": "",
   "button_camera_invoke": "カメラ起動"
 }

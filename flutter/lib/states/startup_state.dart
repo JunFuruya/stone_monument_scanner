@@ -1,58 +1,44 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import '../l10n/app_localizations.dart';
 import '../pages/startup.dart';
-import '../routes/routes.dart';
-import '../ui/common_parts.dart';
+import '../ui/startup_ui.dart';
+
+/// 1-1-1. ロゴ画面 状態クラス
+///
+class LogoState extends State{
+  // 画面を構築
+  @override
+  Widget build(BuildContext context) {
+    return StartupUi.getLogoScaffold(context);
+  }
+}
 
 /// 1-1-2. スプラッシュ画面 状態クラス
 ///
-class SplashState extends State {
-  //await dotenv.load(fileName: '.env');
-  //dotenv.get('API_DOMAIN');
-  //print('API_DOMAIN: ${dotenv.env['API_DOMAIN']}');
-
+class SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('ja', ''),
-        const Locale('en', ''),
-      ],
-      initialRoute: '/',
-      // 遷移先を取得
-      routes: Routes.getRoutes(),
-    );
+    return StartupUi.getSplashScaffold();
   }
 }
 
 /// 1-2. ホーム画面 状態クラス
 class HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+
+    // 2秒後にHomePageへ遷移
+    Timer(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home(title: '',)),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CommonParts.getAppBar (context, "古文書スキャン"),
-      drawer: CommonParts.getHamburgerMenu(context),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('TEST'),
-            Text(
-              '',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-    );
+    return StartupUi.getHomeScaffold(context);
   }
 }

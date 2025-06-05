@@ -4,18 +4,16 @@ import '../states/startup_state.dart';
 /// 1-1-1. ロゴ画面
 ///
 class Logo extends StatelessWidget {
-  // コンストラクタ
-  const Logo({super.key, required title});
+  const Logo({super.key, required String title});
 
-  // 画面を構築
   @override
   Widget build(BuildContext context) {
-    return MaterialApp (
-      home: Scaffold(
-        body: Center(
-          child: Image.asset('assets/images/logo.png'),
-        )
+    return MaterialApp(
+      title: 'Splash Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: Splash(title: '',),
     );
   }
 }

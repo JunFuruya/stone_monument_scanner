@@ -101,11 +101,23 @@ abstract class AppLocalizations {
   /// **'Stone Monument Scanner (alpha version)'**
   String get app_title;
 
-  /// No description provided for @app_top.
+  /// No description provided for @startup_logo.
   ///
   /// In en, this message translates to:
-  /// **'Home'**
-  String get app_top;
+  /// **'スプラッシュ'**
+  String get startup_logo;
+
+  /// No description provided for @startup_splash.
+  ///
+  /// In en, this message translates to:
+  /// **'スプラッシュ'**
+  String get startup_splash;
+
+  /// No description provided for @startup_home.
+  ///
+  /// In en, this message translates to:
+  /// **'ホーム'**
+  String get startup_home;
 
   /// No description provided for @ancient_documents_top.
   ///
@@ -113,11 +125,11 @@ abstract class AppLocalizations {
   /// **'Ancient Docs Scan'**
   String get ancient_documents_top;
 
-  /// No description provided for @camera.
+  /// No description provided for @ancient_documents_camera.
   ///
   /// In en, this message translates to:
   /// **''**
-  String get camera;
+  String get ancient_documents_camera;
 
   /// No description provided for @button_camera_invoke.
   ///
