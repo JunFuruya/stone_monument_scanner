@@ -7,7 +7,7 @@ import '../routes/routes.dart';
 // メイン処理
 void main() {
   // FIXME envファイルから取得する
-  runApp(Logo(title: 'test'));
+  runApp(Application());
 }
 
 // アプリケーション
