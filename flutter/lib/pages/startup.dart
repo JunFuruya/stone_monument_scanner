@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import '../l10n/app_localizations.dart';
 import '../states/startup_state.dart';
+import '../routes/routes.dart';
 
 /// 1-1-1. ロゴ画面
 ///
@@ -9,11 +12,19 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Splash Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Splash(title: '',),
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('ja', ''),
+        const Locale('en', ''),
+      ],
+      initialRoute: '/',
+      home: Splash(title: ''),
+      routes: Routes.getRoutes(),
     );
   }
 }
