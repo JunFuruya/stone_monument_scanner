@@ -35,7 +35,7 @@ class Splash extends StatefulWidget {
   final String title; // UIのところから"widget.変数名"で呼べる
 
   // コンストラクタ
-  const Splash({Key? key, required this.title}): super(key: key);
+  const Splash({super.key, required this.title});
 
   @override
   SplashState createState() => SplashState();

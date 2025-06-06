@@ -82,6 +82,7 @@ class AncientDocumentsTopState extends State<AncientDocumentsTop> {
       }
     } catch (e) {
       ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(content: Text('エラー: $e')));
+      print('エラー: $e');
     } finally {
       //setState(() => _uploading = false);
     }
