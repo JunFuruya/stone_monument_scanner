@@ -104,19 +104,19 @@ abstract class AppLocalizations {
   /// No description provided for @startup_logo.
   ///
   /// In en, this message translates to:
-  /// **'スプラッシュ'**
+  /// **'Logo'**
   String get startup_logo;
 
   /// No description provided for @startup_splash.
   ///
   /// In en, this message translates to:
-  /// **'スプラッシュ'**
+  /// **'Splash'**
   String get startup_splash;
 
   /// No description provided for @startup_home.
   ///
   /// In en, this message translates to:
-  /// **'ホーム'**
+  /// **'Home'**
   String get startup_home;
 
   /// No description provided for @ancient_documents_top.
@@ -131,11 +131,29 @@ abstract class AppLocalizations {
   /// **''**
   String get ancient_documents_camera;
 
+  /// No description provided for @message_no_photo_taken.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo of a document.'**
+  String get message_no_photo_taken;
+
   /// No description provided for @button_camera_invoke.
   ///
   /// In en, this message translates to:
-  /// **'Take Photos'**
+  /// **'Take a photo'**
   String get button_camera_invoke;
+
+  /// No description provided for @button_save_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Save this photo'**
+  String get button_save_photo;
+
+  /// No description provided for @button_analyze_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyze this photo'**
+  String get button_analyze_photo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

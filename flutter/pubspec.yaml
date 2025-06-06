@@ -55,6 +55,11 @@ dependencies:
   # スプラッシュ
   flutter_native_splash: ^2.1.3+1
 
+  # HTTP通信
+  http: ^1.4.0
+  http_parser: ^4.1.2
+  mime: ^2.0.0
+
 dev_dependencies:
   # テスト
   flutter_test:

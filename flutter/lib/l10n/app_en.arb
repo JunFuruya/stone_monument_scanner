@@ -1,10 +1,13 @@
 {
   "@@locale":"en",
   "app_title": "Stone Monument Scanner (alpha version)",
-  "startup_logo": "スプラッシュ",
-  "startup_splash": "スプラッシュ",
-  "startup_home": "ホーム",
+  "startup_logo": "Logo",
+  "startup_splash": "Splash",
+  "startup_home": "Home",
   "ancient_documents_top": "Ancient Docs Scan",
   "ancient_documents_camera": "",
-  "button_camera_invoke": "Take Photos"
+  "message_no_photo_taken": "Take a photo of a document.",
+  "button_camera_invoke": "Take a photo",
+  "button_save_photo": "Save this photo",
+  "button_analyze_photo": "Analyze this photo"
 }
