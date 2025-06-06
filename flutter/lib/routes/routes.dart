@@ -12,7 +12,6 @@ class Routes {
       '/logo': (BuildContext context) => Home(title: AppLocalizations.of(context)!.startup_home),
       '/splash': (BuildContext context) => Splash(title: AppLocalizations.of(context)!.startup_splash),
       '/ancient_documents': (BuildContext context) => AncientDocumentsTop(title: AppLocalizations.of(context)!.ancient_documents_top),
-      '/ancient_documents/camera': (BuildContext context) => AncientDocumentsCamera(title: AppLocalizations.of(context)!.ancient_documents_camera),
       // FIXME プライバシーポリシー画面
       //'/privacy_policy': (BuildContext context) => AncientDocumentsCamera(title: ''),
     };

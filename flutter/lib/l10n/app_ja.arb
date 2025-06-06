@@ -6,5 +6,8 @@
   "startup_home": "ホーム",
   "ancient_documents_top": "古文書スキャン",
   "ancient_documents_camera": "",
-  "button_camera_invoke": "カメラ起動"
+  "message_no_photo_taken": "カメラで古文書を撮影してください。",
+  "button_camera_invoke": "カメラを起動する",
+  "button_save_photo": "この写真を保存する",
+  "button_analyze_photo": "この写真を解析する"
 }

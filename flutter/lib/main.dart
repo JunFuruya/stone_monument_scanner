@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'pages/startup.dart';
 import '../l10n/app_localizations.dart';
 import '../routes/routes.dart';
 
 // メイン処理
-void main() {
-  // FIXME envファイルから取得する
+Future<void> main() async {
+  await dotenv.load(fileName: ".env"); // .envファイルを読み込む
   runApp(Application());
 }
 

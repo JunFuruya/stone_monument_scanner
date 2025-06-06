@@ -27,5 +27,14 @@ class AppLocalizationsJa extends AppLocalizations {
   String get ancient_documents_camera => '';
 
   @override
-  String get button_camera_invoke => 'カメラ起動';
+  String get message_no_photo_taken => 'カメラで古文書を撮影してください。';
+
+  @override
+  String get button_camera_invoke => 'カメラを起動する';
+
+  @override
+  String get button_save_photo => 'この写真を保存する';
+
+  @override
+  String get button_analyze_photo => 'この写真を解析する';
 }
