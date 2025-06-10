@@ -9,5 +9,7 @@
   "message_no_photo_taken": "カメラで古文書を撮影してください。",
   "button_camera_invoke": "カメラを起動する",
   "button_save_photo": "この写真を保存する",
-  "button_analyze_photo": "この写真を解析する"
+  "button_analyze_photo": "この写真を解析する",
+  "privacy_policy": "プライバシーポリシー",
+  "terms_of_service": "利用規約"
 }

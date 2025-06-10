@@ -33,7 +33,6 @@ class Logo extends StatelessWidget {
 ///
 class Splash extends StatefulWidget {
   final String title; // UIのところから"widget.変数名"で呼べる
-
   // コンストラクタ
   const Splash({super.key, required this.title});
 
@@ -44,10 +43,9 @@ class Splash extends StatefulWidget {
 /// 1-2. ホーム画面
 ///
 class Home extends StatefulWidget {
+  final String title;
   // コンストラクタ
   const Home({super.key, required this.title});
-
-  final String title;
 
   @override
   State<Home> createState() => HomeState();

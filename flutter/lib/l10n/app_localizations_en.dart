@@ -37,4 +37,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get button_analyze_photo => 'Analyze this photo';
+
+  @override
+  String get privacy_policy => 'Privacy Policy';
+
+  @override
+  String get terms_of_service => 'Terms of Service';
 }
