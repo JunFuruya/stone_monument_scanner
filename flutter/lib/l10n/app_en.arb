@@ -9,5 +9,7 @@
   "message_no_photo_taken": "Take a photo of a document.",
   "button_camera_invoke": "Take a photo",
   "button_save_photo": "Save this photo",
-  "button_analyze_photo": "Analyze this photo"
+  "button_analyze_photo": "Analyze this photo",
+  "privacy_policy": "Privacy Policy",
+  "terms_of_service": "Terms of Service"
 }

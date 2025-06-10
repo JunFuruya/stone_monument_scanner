@@ -26,6 +26,7 @@ class SplashState extends State<Splash> {
 }
 
 /// 1-2. ホーム画面 状態クラス
+///
 class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {

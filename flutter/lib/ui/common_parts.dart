@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
+
 class CommonParts {
   /// ハンバーガーメニュー項目リスト
-  static List<Map<String, String>> menuList = [
-    {'title': '古文書スキャン', 'uri': '/ancient_documents'},
-    {'title': 'プライバシーポリシー', 'uri': '/privacy_policy'}
-  ];
+  static getMenuListMap (BuildContext context) {
+    List<Map<String, String>> menuList = [
+      {'title': AppLocalizations.of(context)!.ancient_documents_top, 'uri': '/ancient_documents'},
+      {'title': AppLocalizations.of(context)!.privacy_policy, 'uri': '/privacy_policy'},
+      {'title': AppLocalizations.of(context)!.terms_of_service, 'uri': '/terms_of_service'}
+    ];
+    return menuList;
+  }
+
 
   /// ヘッダー
   ///
   static getAppBar(BuildContext context, String title) {
     return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      backgroundColor: Color(0xFF5C9291),
       title: Text(title),
     );
   }
 
   /// ハンバーガーメニュー
   static Drawer getHamburgerMenu(BuildContext context) {
+    List<Map<String, String>> menuList = CommonParts.getMenuListMap(context);
+
     return Drawer(
       child: ListView(
         children: [
@@ -31,25 +40,55 @@ class CommonParts {
 
   /// ハンバーガーメニューヘッダ
   static DrawerHeader _getHamburgerMenuHeader() {
-    return const DrawerHeader(child: null,);
+    return const DrawerHeader(
+      decoration: BoxDecoration(
+        color: Color(0xFF5C9291),
+      ),
+      child: Center(
+        child: Text(
+          'メニュー',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
   }
 
   /// ハンバーガーメニュー区切り線
   static Divider _getHamburgerMenuDivider() {
-    return const Divider();
+    return const Divider(
+      thickness: 1.0,
+      color: Colors.black,
+    );
   }
 
   /// ハンバーガーメニューに項目を追加する
   static Column _addMenuItem(BuildContext context, Map<String, String> map) {
     return Column(
-        children: [
-          ElevatedButton(
-            child: Text(map['title']!),
-            onPressed: () {
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: GestureDetector(
+            onTap: () {
               Navigator.of(context).pushNamed(map['uri']!);
             },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  map['title']!,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ],
+            ),
           ),
-        ]
+        ),
+      ]
     );
   }
 
@@ -64,5 +103,10 @@ class CommonParts {
       ), // ボタンのデザイン
       child: Text(text), // ボタンのラベル
     );
+  }
+
+  /// 錆浅葱
+  static getColorBlue() {
+    return Color(0xFF5C9291);
   }
 }
